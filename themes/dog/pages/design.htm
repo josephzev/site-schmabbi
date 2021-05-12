@@ -1,0 +1,45 @@
+url = "/portfolio/:slug"
+layout = "default"
+title = "Design"
+
+[builderDetails]
+modelClass = "Joseph\Portfolio\Models\Design"
+identifierValue = "{{ :slug }}"
+modelKeyColumn = "slug"
+displayColumn = "title"
+notFoundMessage = "Record not found"
+
+[designs]
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+
+<div class="design">
+
+{% if record %}
+ 
+     <!-- <div class="uk-section uk-height-viewport uk-flex uk-flex-middle uk-flex-center main-image uk-background-cover uk-flex uk-flex-center uk-background-primary"  alt="" data-src="{{record.image.thumb(1400,1000)}}" uk-img>
+
+		<h1></h1>
+		<div class="uk-position-bottom-center uk-margin-bottom">
+			<span class="down-arrow" uk-icon="icon: chevron-down; ratio: 3.5"></span>	
+		</div>
+    </div> -->
+    
+    <div class="background uk-child-width-1-2@m uk-padding uk-flex uk-flex-middle" uk-grid>
+        <img class="mix uk-background-contain" data-src="https://schmabbi/storage/app/media/stars.jpg" uk-img>
+        <img class="z" data-src="{{record.image.thumb(1000,null)}}"  alt="" uk-img>
+    	<div class="uk-flex-first@m z">
+    		<h2> {{record.title}}</h2>
+    		<p>{{ record.description|raw }}</p>
+    	</div>
+    </div>
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
+</div>
+
+
+{% component 'designs' %}

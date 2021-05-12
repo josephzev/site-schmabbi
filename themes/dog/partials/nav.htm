@@ -1,0 +1,34 @@
+  <!-- nav large -->
+
+    <div class="uk-position-top from-top" uk-scrollspy="repeat:true;" id="nav-scroll"></div>
+    <div class="nav uk-position-fixed uk-width-1-1">
+        <nav id="navbar" class="navbar  uk-container-expand  {% if this.page.id == 'portfolio' %} portfoio-nav underline {% elseif this.page.id == 'about' %} portfoio-nav underline {% else %} uk-navbar-transparent scroll  {%endif%} " uk-navbar>
+            <div class="uk-navbar-center">
+                <a class="logo uk-margin-left" href="">Logo</a>
+                <ul class="uk-navbar-nav uk-visible@m">
+                    <li><div><a class="{% if this.page.id == 'home' %} active {% else %} underline {% endif %}" href="{{'home' | page}}">Home</a></div></li>
+                    <li><div><a class=" {% if this.page.id == 'about' %} active {% else %} underline {% endif %} hover hover-3"  href="{{'about' | page}}">About</a></div></li>
+                    <li><div><a class=" {% if this.page.id == 'portfolio' %} active {% else %} underline {% endif %} hover hover-3"  href="{{'portfolio' | page}}">portfolio</a></div></li>
+                    <li><div><a class=" {% if this.page.id == 'contact' %} active {% else %} underline {% endif %} hover hover-3"  href="{{'contact' | page}}">Contact</a></div></li>
+                </ul>
+                <a class=" uk-hidden@m" uk-navbar-toggle-icon uk-toggle="target: #offcanvas-nav-primary" ></a>
+            </div>
+            
+        </nav>
+    </div>
+
+ <!-- nav modal-->
+
+ <div id="offcanvas-nav-primary" class="nav-small" uk-offcanvas="mode: push;  flip: true">
+    <div class="uk-offcanvas-bar background uk-flex uk-flex-column">
+
+        <ul class="uk-nav">
+            <button class="uk-offcanvas-close" uk-icon="icon:close; ratio:1.5;"></button>
+            <li><div><a class="" href="{{'home' | page}}">Home</a></div></li>
+            <li><div><a class=" "  href="{{'about' | page}}">About</a></div></li>
+            <li><div><a class=" "  href="{{'portfolio' | page}}">portfolio</a></div></li>
+            <li><div><a class=" "  href="{{'contact' | page}}">Contact</a></div></li>
+        </ul>
+
+    </div>
+</div>

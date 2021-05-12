@@ -1,0 +1,30 @@
+url = "/contact"
+layout = "default"
+title = "Contact"
+
+[contactForm]
+==
+<div class="contact-img uk-width-1-1 uk-background-cover " data-src="./storage/app/media/contact-tel.jpg" uk-img></div>
+<div class="contact uk-text-center">
+	<h1>Contact</h1>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+	<h2>Phone and Email</h2>
+	<p><strong>hello@schmabbi.com</strong> or call <strong>000000000</strong></p>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+</div>
+<div class="contact-background">
+	<div class="contact-wrapper uk-text-center">
+		<h3> Contact Schmabbi</h3>
+		<div id="scf-{{ contactForm }}">
+	 
+	 	<div id="scf-message-{{ contactForm }}">
+	 		{% partial contactForm ~ '::scf-message' %}
+	 	</div>
+	 
+	 	<div id="scf-form-{{ contactForm }}">
+	 		{% partial contactForm ~ '::scf-form' %}
+	 	</div>
+	 
+	 </div>
+	</div>
+</div>
