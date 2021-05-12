@@ -1,0 +1,14 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table joseph_portfolio_'
+    - builder_table_create_joseph_portfolio_.php
+1.0.3:
+    - 'Created table joseph_portfolio_gallery'
+    - builder_table_create_joseph_portfolio_gallery.php
+1.0.4:
+    - 'Created table joseph_portfolio_categories'
+    - builder_table_create_joseph_portfolio_categories.php
+1.0.5:
+    - 'Created table joseph_portfolio_gallery_categories'
+    - builder_table_create_joseph_portfolio_gallery_categories.php

@@ -1,0 +1,20 @@
+plugin:
+    name: 'joseph.portfolio::lang.plugin.name'
+    description: 'joseph.portfolio::lang.plugin.description'
+    author: Joseph
+    icon: oc-icon-image
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Portfolio
+        url: joseph/portfolio/portfolio
+        icon: icon-life-ring
+        sideMenu:
+            side-menu-item:
+                label: Categories
+                url: joseph/portfolio/categories
+                icon: icon-sitemap
+            side-menu-item2:
+                label: Gallery
+                url: joseph/portfolio/gallery
+                icon: icon-sitemap

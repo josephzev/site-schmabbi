@@ -1,0 +1,8 @@
+name: My Theme
+description: 'Just a bare-bones UIkit OctoberCMS theme w/ Laravel Mix support'
+author: Ompmega
+homepage: 'https://github.com/ompmega'
+code: oc-theme
+previewImage: assets/theme-preview.png
+require:
+    - Ompmega.MixHelper

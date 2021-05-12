@@ -1,0 +1,10 @@
+name: Portfolio
+form: $/joseph/portfolio/models/design/fields.yaml
+modelClass: Joseph\Portfolio\Models\Design
+defaultRedirect: joseph/portfolio/portfolio
+create:
+    redirect: 'joseph/portfolio/portfolio/update/:id'
+    redirectClose: joseph/portfolio/portfolio
+update:
+    redirect: joseph/portfolio/portfolio
+    redirectClose: joseph/portfolio/portfolio

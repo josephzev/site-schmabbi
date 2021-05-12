@@ -1,0 +1,27 @@
+fields:
+    title:
+        label: Title
+        span: auto
+        type: text
+    slug:
+        label: Slug
+        span: auto
+        preset:
+            field: title
+            type: slug
+        type: text
+    photo:
+        label: Photo
+        span: auto
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        type: fileupload
+    categories:
+        label: Categories
+        span: auto
+        nameFrom: name
+        descriptionFrom: description
+        type: relation

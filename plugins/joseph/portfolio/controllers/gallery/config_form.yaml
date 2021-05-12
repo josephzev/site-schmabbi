@@ -1,0 +1,10 @@
+name: Gallery
+form: $/joseph/portfolio/models/gallery/fields.yaml
+modelClass: Joseph\Portfolio\Models\Gallery
+defaultRedirect: joseph/portfolio/gallery
+create:
+    redirect: 'joseph/portfolio/gallery/update/:id'
+    redirectClose: joseph/portfolio/gallery
+update:
+    redirect: joseph/portfolio/gallery
+    redirectClose: joseph/portfolio/gallery

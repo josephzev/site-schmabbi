@@ -1,0 +1,30 @@
+{% set previous =  __SELF__.previous %}
+{% set next =  __SELF__.next %}
+
+<div class="uk-height-small uk-width-1-1 uk-inline design-nav" style="color:black">
+
+	{% if previous != this.param.slug %}
+
+	<a class="left-link uk-position-small uk-position-center-left" href="{{ 'portfolio' | page }}/{{previous}} " uk-toggle="target: #line-left; mode: hover;  animation:  uk-animation-slide-right">
+		<span class="chev-left" uk-icon="icon: chevron-left; ratio: 1.5"></span>
+		<span id="line-left" class="line-left uk-visible@s" uk-icon="icon: minus; ratio: 1.2" hidden></span>
+		<span class="uk-visible@s">Previous Project</span>
+	</a>
+
+    {% endif %}
+
+    <a class="middle-link uk-position-center uk-inline-clip uk-transition-toggle" href="{{ 'portfolio' | page }}">
+    	<span class="uk-transition-scale-up uk-transition-opaque" uk-icon="icon: grid; ratio: 2"></span>
+    </a>
+
+    {% if next != this.param.slug %}
+
+	<a class="right-link uk-position-small uk-position-center-right" href="{{ 'portfolio' | page }}/{{next}} " uk-toggle="target: #line-right; mode: hover;  animation:  uk-animation-slide-left">
+		<span class="uk-visible@s">Next Project</span>
+		<span id="line-right" class="line-right uk-visible@s" uk-icon="icon: minus; ratio: 1.2" hidden></span>
+		<span class="chev-right" uk-icon="icon: chevron-right; ratio: 1.5"></span>
+	</a>
+
+    {% endif %} 
+	
+</div>

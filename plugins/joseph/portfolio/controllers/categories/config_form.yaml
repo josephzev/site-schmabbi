@@ -1,0 +1,10 @@
+name: Categories
+form: $/joseph/portfolio/models/category/fields.yaml
+modelClass: Joseph\Portfolio\Models\Category
+defaultRedirect: joseph/portfolio/categories
+create:
+    redirect: 'joseph/portfolio/categories/update/:id'
+    redirectClose: joseph/portfolio/categories
+update:
+    redirect: joseph/portfolio/categories
+    redirectClose: joseph/portfolio/categories
