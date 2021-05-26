@@ -45,4 +45,36 @@ class Gallery extends Model
      */
     public $rules = [
     ];
+
+    public function scopeListFrontEnd($query, $options = []){
+        extract(array_merge([
+            
+            'page' => 1,
+            'perPage' => 10,
+            'categories' => ""
+         ], $options ));
+
+        /*if($Category !== null){
+            $query->whereHas('categories',function($q) use ($category){
+                $q->where('id', '=', $Category);
+            });
+            $query->
+        }*/
+
+        if($categories !== "") {
+
+            if(!is_array($categories)){
+                $categories = [$categories];
+            }
+
+            foreach ($categories as $category){
+                $query->whereHas('categories', function($q) use ($category){
+                    $q->where('id', '=', $category);
+                });
+            }
+
+        }
+
+        return $query->paginate($perPage,$page);
+    }
 }

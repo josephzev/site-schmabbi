@@ -1,4 +1,58 @@
 title = "Gallery"
-layout = "default"
 url = "/gallery"
+layout = "default"
+is_hidden = 0
+
 ==
+
+<?
+  use Joseph\Portfolio\Models\Gallery;
+  use Joseph\Portfolio\Models\Category;
+
+  function onStart(){$this->prepareVars();}
+
+  function onFilterGallery(){$this->prepareVars();}
+
+  function prepareVars(){
+
+     $options = post('Filter', []);
+
+     $this['gallery'] = gallery::listFrontEnd($options);
+
+     $this['categories'] = Category::all();
+  }
+
+?>
+
+==
+
+<div class="uk-height-small" style="margin-top:130px; background-color:black; color:white">
+
+	<div class="uk-width-1-1">
+		{{ form_ajax('onFilterGallery', {update: {'gallery/gallery': '#partialGallery' }})}}
+		<div id="galleryFilter" class="">
+            <div class="field">
+            	<label>
+                <input class="uk-invisible"  type="radio" name="Filter[categories]" value=""/>
+			  	<span>all</span></label>
+			  	
+			{% for category in categories %}
+
+			  	 <input  type="radio" name="Filter[categories]" value="{{ category.id }}"/>
+			  	 <label>{{category.name}}</label>
+			  	 <label>{{category.id}}</label>
+			  </div>
+			  {% endfor %}
+		</div>
+
+		{{ form_close() }}
+	</div>
+
+	
+	<div class="uk-width-1-1">
+		<div id="partialGallery">
+			{% partial 'gallery/gallery' %}
+		</div>
+	</div>
+	
+</div>

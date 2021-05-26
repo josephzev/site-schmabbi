@@ -2,6 +2,8 @@
 
 use System\Classes\PluginBase;
 
+use Input;
+
 class Plugin extends PluginBase
 {
     public function registerComponents()
@@ -9,7 +11,8 @@ class Plugin extends PluginBase
 
     	return[
 
-    		'Joseph\Portfolio\Components\Designs' => 'designs'
+    		'Joseph\Portfolio\Components\Designs' => 'designs',
+    		'Joseph\Portfolio\Components\Photos' => 'photos'
 
     	];
     }

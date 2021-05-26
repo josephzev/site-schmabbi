@@ -1,5 +1,5 @@
 // ---
-require('./bootstrap');
+require('./bootstrap'); 
 
 /* YOUR CODE HERE */
 
@@ -30,3 +30,12 @@ UIkit.util.on('#nav-scroll', 'outview', function () {
 	document.documentElement.style.setProperty("--line", "#990033");
 	    
 });
+
+
+(function($){
+   $('#galleryFilter').on('change','input,select', function(){
+   	 var $form = $(this).closest('form');
+   	 console.log($form)
+   	 $form.request();
+   });
+})(jQuery);

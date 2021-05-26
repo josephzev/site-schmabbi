@@ -46,6 +46,14 @@ UIkit.util.on('#nav-scroll', 'outview', function () {
   document.documentElement.style.setProperty("--line", "#990033");
 });
 
+(function ($) {
+  $('#galleryFilter').on('change', 'input,select', function () {
+    var $form = $(this).closest('form');
+    console.log($form);
+    $form.request();
+  });
+})(jQuery);
+
 /***/ }),
 
 /***/ "./assets/resources/scss/theme.scss":
@@ -66,8 +74,8 @@ UIkit.util.on('#nav-scroll', 'outview', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /srv/october-projects/shmaby-site/themes/schmabbi/assets/resources/js/theme.js */"./assets/resources/js/theme.js");
-module.exports = __webpack_require__(/*! /srv/october-projects/shmaby-site/themes/schmabbi/assets/resources/scss/theme.scss */"./assets/resources/scss/theme.scss");
+__webpack_require__(/*! /srv/october-projects/schmabbi-new/themes/dog/assets/resources/js/theme.js */"./assets/resources/js/theme.js");
+module.exports = __webpack_require__(/*! /srv/october-projects/schmabbi-new/themes/dog/assets/resources/scss/theme.scss */"./assets/resources/scss/theme.scss");
 
 
 /***/ })

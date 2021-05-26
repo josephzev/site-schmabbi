@@ -1,0 +1,14 @@
+{% set gallery = photos.gallery %}
+
+{{gallery}}
+
+{% for photo in gallery %}
+
+ <div class="uk-child-1-2" uk-grid>
+    
+     <img class="uk-transition-scale-up uk-transition-opaque" src="{{photo.image.thumb(500,auto, {'mode':'crop'})}}">
+	
+
+ </div>
+
+{% endfor %}  

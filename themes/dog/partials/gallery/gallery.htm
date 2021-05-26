@@ -1,0 +1,15 @@
+{% if gallery|length %}
+
+<div class="uk-child-width-1-4 uk-grid-match" uk-grid>
+
+ {% for photo in gallery %}
+
+  
+  	 <img src="{{ photo.photo.path }}" alt="">
+
+
+ {% endfor %}
+
+</div>
+
+{% endif %}

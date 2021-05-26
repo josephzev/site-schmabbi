@@ -12,3 +12,6 @@
 1.0.5:
     - 'Created table joseph_portfolio_gallery_categories'
     - builder_table_create_joseph_portfolio_gallery_categories.php
+1.0.6:
+    - 'Updated table joseph_portfolio_categories'
+    - builder_table_update_joseph_portfolio_categories.php
