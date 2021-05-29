@@ -1,12 +1,15 @@
-{% if gallery|length %}
+{% if gallery|length %} 
 
-<div class="uk-child-width-1-4 uk-grid-match" uk-grid>
+<div class="uk-flex uk-flex-center uk-flex-wrap gallery-photos" uk-lightbox id="lightbox">
 
  {% for photo in gallery %}
 
-  
-  	 <img src="{{ photo.photo.path }}" alt="">
-
+    <a class="uk-height-small container uk-inline-clip uk-transition-toggle uk-text-center" href="{{ photo.photo.path }}" data-caption="{{photo.title}}" tabindex="0">
+  	 <img class="uk-background-cover uk-height-1-1 uk-width-1-1" alt="" data-src="{{ photo.photo.path }}" uk-img>
+  	 <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
+          <p class="uk-h4 uk-margin-remove">{{photo.title}}</p>
+     </div>
+    </a>
 
  {% endfor %}
 
