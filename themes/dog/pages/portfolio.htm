@@ -21,12 +21,12 @@ use Joseph\Portfolio\Models\Gallery;
   }
 ?>
 ==
-<div class="categories uk-margin-large-left">
+<div class="categories">
 
 	<!-- <button id="btnfull" onclick="openFullscreen()">Click me</button> -->
 
 	  {{ form_ajax('onFilterGallery', {update: {'gallery/gallery': '#partialGallery' }})}}
-		<div id="galleryFilter">
+		<div id="galleryFilter" class="links">
 
             	<label>
                 <input class="uk-invisible"  type="radio" name="Filter[categories]" value=""/>

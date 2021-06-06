@@ -12790,7 +12790,8 @@ html::selection {
   margin-top: 30px;
   margin-bottom: 40px;
 }
-.contact-wrapper .contact-btn {
+
+.contact-btn {
   text-decoration: none;
   border-width: 1.2px;
   padding: 15px;
@@ -12807,7 +12808,7 @@ html::selection {
   transition: all 0.2s;
   cursor: pointer;
 }
-.contact-wrapper .contact-btn:hover {
+.contact-btn:hover {
   background-color: #990033;
   color: #fff;
 }
@@ -12820,8 +12821,17 @@ html::selection {
 }
 @media (min-width: 960px) {
   .categories {
+    margin-left: 40px;
     margin-top: 130px;
     margin-bottom: 20px;
+  }
+}
+.categories .links {
+  max-width: 283px;
+}
+@media (min-width: 500px) {
+  .categories .links {
+    max-width: none;
   }
 }
 .categories label {
@@ -12841,6 +12851,9 @@ html::selection {
   padding-bottom: 5px;
 }
 .categories span:hover {
+  border-bottom: 2px solid #990033;
+}
+.categories span:active {
   border-bottom: 2px solid #990033;
 }
 

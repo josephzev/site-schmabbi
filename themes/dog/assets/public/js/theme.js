@@ -78,8 +78,6 @@ document.getElementById('btnfull').onclick = function openFullscreen() {
     elem.msRequestFullscreen();
   }
 };
-/* Close fullscreen */
-
 
 function closeFullscreen() {
   if (document.exitFullscreen) {

@@ -512,9 +512,16 @@ html::selection {
 	color:#000;
 	margin-bottom: 40px;
 	@media (min-width: $breakpoint-medium) {
+		    margin-left:40px;
 	        margin-top:130px;
 	        margin-bottom:20px;
 	    }
+	.links{
+		max-width:283px;
+		@media (min-width: 500px) {
+	        max-width:none;
+	    }
+	}
 	label{
 		cursor: pointer;
 		font-family: "Lato", sans-serif;
@@ -533,6 +540,9 @@ html::selection {
 	}
 	span{
 		&:hover{
+			border-bottom: 2px solid $color;
+		}
+		&:active{
 			border-bottom: 2px solid $color;
 		}
 	}
