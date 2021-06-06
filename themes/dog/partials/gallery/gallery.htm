@@ -4,8 +4,8 @@
 
  {% for photo in gallery %}
 
-    <a class="uk-height-small container uk-inline-clip uk-transition-toggle uk-text-center" href="{{ photo.photo.path }}" data-caption="{{photo.title}}" tabindex="0">
-  	 <img class="uk-background-cover uk-height-1-1 uk-width-1-1" alt="" data-src="{{ photo.photo.path }}" uk-img>
+    <a class="container uk-inline-clip uk-transition-toggle uk-text-center" href="{{ photo.photo.path }}" data-caption="{{photo.title}}" tabindex="0">
+  	 <div class="uk-background-cover uk-height-1-1 uk-width-1-1" alt="" data-src="{{ photo.photo.path }}" uk-img></div>
   	 <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
           <p class="uk-h4 uk-margin-remove">{{photo.title}}</p>
      </div>

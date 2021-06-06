@@ -73,7 +73,6 @@ document.getElementById('btnfull').onclick = function openFullscreen() {
   }
 }
 
-/* Close fullscreen */
 function closeFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();

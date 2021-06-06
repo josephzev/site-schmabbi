@@ -1,0 +1,73 @@
+title = "Portfolio-none"
+url = "/portfolio-none"
+layout = "default"
+is_hidden = 0
+
+[builderList]
+modelClass = "Joseph\Portfolio\Models\Design"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "title"
+noRecordsMessage = "No records found"
+detailsPage = "design"
+detailsKeyColumn = "slug"
+detailsUrlParameter = "slug"
+pageNumber = "{{ :page }}"
+==
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+<div class="portfolio ">
+ <ul class="record-list uk-child-width-1-2 uk-child-width-1-4@m uk-margin-remove" uk-grid="masonry: true">
+    {% for record in records %}
+        <li class=" uk-margin-remove">
+            {# Use spaceless tag to remove spaces inside the A tag. #}
+            {% spaceless %}
+                {% if detailsPage %}
+                    <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+                {% endif %}
+
+                  <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
+                    <img class="uk-transition-scale-up uk-transition-opaque" src="{{record.image.thumb(500,auto, {'mode':'crop'})}}">
+                    <div class="uk-transition-scale-up uk-position-cover background">
+                        <h3 class="uk-position-center "uk-scrollspy-class="uk-animation-slide-top">
+                            {{record.title}}
+                        </h3>
+                    </div>
+                </div> 
+
+                {% if detailsPage %}
+                    </a>
+                {% endif %}
+
+                
+
+            {% endspaceless %}
+        </li>
+    {% else %}
+        <li class="no-data">{{ noRecordsMessage }}</li>
+    {% endfor %}
+</ul>
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
+	
+</div>

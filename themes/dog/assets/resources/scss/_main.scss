@@ -479,7 +479,8 @@ html::selection {
 			margin-top: 30px;
             margin-bottom: 40px;
 		}
-	.contact-btn{
+}
+.contact-btn{
 
 			text-decoration: none;
 		    border-width: 1.2px;
@@ -503,7 +504,6 @@ html::selection {
 
 			}
 	}
-}
 
 /*gallery*/
 
@@ -531,6 +531,11 @@ html::selection {
 		position: relative;
 		padding-bottom: 5px;
 	}
+	span{
+		&:hover{
+			border-bottom: 2px solid $color;
+		}
+	}
 
 }
 .gallery-photos{
@@ -541,7 +546,12 @@ html::selection {
       .container{
       	margin-right:4px;
       	margin-bottom:4px;
-      	width:200px;
+      	width:150px;
+      	height:150px;
       	cursor: pointer;
+      	@media (min-width: $breakpoint-small) {
+	        width:200px;
+	        height:200px;
+	    }
       }
 }

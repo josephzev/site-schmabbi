@@ -12840,6 +12840,9 @@ html::selection {
   position: relative;
   padding-bottom: 5px;
 }
+.categories span:hover {
+  border-bottom: 2px solid #990033;
+}
 
 .gallery-photos {
   max-width: 1000px;
@@ -12850,8 +12853,15 @@ html::selection {
 .gallery-photos .container {
   margin-right: 4px;
   margin-bottom: 4px;
-  width: 200px;
+  width: 150px;
+  height: 150px;
   cursor: pointer;
+}
+@media (min-width: 640px) {
+  .gallery-photos .container {
+    width: 200px;
+    height: 200px;
+  }
 }
 
 /* ========================================================================
