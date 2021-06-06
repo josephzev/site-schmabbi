@@ -388,23 +388,70 @@ html::selection {
 /*about*/
 
 .about{
+
 	margin-top:90px;
-	max-width: 700px;
+	max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
 	padding:20px;
+	padding-left:0;
+
 	@media (min-width: $breakpoint-medium) {
 	        margin-top:130px;
 	    }
-	p{
-		font-size: 18px;
-		font-family: 'Lato';
-		font-weight: 300;
-		letter-spacing: 0.3px;
-		color: #676767;
-		line-height: 31px;
-	}
+	    .img{
+	    	min-height: 350px;
+	    	@media (min-width: $breakpoint-small) {
+	        min-height: 450px;
+	       }
+	       @media (min-width: $breakpoint-medium) {
+	        padding:25px;
+	        min-height: none;
+	    }
+
+	    }
+		.para{
+			z-index: 1;
+			color: #1f1e1d;
+			font-family: 'Heebo', sans-serif;
+			font-weight: 300;
+			letter-spacing: 0.6px;
+			font-size: 14px;
+            margin-bottom: 25px;
+            padding-left: 10px;
+            padding-right: 10px;
+			@media (min-width: 465px) {
+			          font-size: 15px;
+			        }
+			@media (min-width: $breakpoint-small) {
+			          font-size: 16px;
+			        }
+			@media (min-width: $breakpoint-medium) {
+			          font-size: 17px;
+			        }   
+			@media (min-width: $breakpoint-large) {
+			          font-size: 19px;
+			        }   
+		}
+		.sections{
+			    max-width: 1200px;
+			    margin-left: auto;
+			    margin-right: auto;
+			    margin-top:0;
+		}
+		.img-container{
+			height:300px;
+			@media (min-width: $breakpoint-small) {
+			          height:400px;
+			        }
+			
+			div{
+				 background-position: top;
+			}        
+		}
+
 }
+
 
 /*contact*/
 
