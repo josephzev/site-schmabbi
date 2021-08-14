@@ -26,32 +26,18 @@ use Joseph\Portfolio\Models\Gallery;
 	<!-- <button id="btnfull" onclick="openFullscreen()">Click me</button> -->
 
 	  {{ form_ajax('onFilterGallery', {update: {'gallery/gallery': '#partialGallery' }})}}
+	  
 		<div id="galleryFilter" class="links">
 
-            	<label>
-                <input class="uk-invisible"  type="radio" name="Filter[categories]" value=""/>
+        <label>
+          <input class="uk-invisible"  type="radio" name="Filter[categories]" value=""/>
 			  	<span>all</span>
 			  </label>
-
-			<!-- active --> 
-			
-			{% for photo in gallery %}
-
-		     {% for active in photo.categories %}
-
-                   {% if active.id == category.id %} active {% endif %}
-
-			 {% endfor %} 
-
-			 {% endfor %}
-
-			 <!-- endactive test -->
-
-			  	
+		  	
 			{% for category in categories %}
                  
-                 <label>
-                   <input class="uk-invisible"  type="radio" name="Filter[categories]" value="{{ category.id }}"/>
+           <label>
+              <input class="uk-invisible"  type="radio" name="Filter[categories]" value="{{ category.id }}"/>
 			  	    <span class="">{{category.name}}</span>
 			  	 </label>
 			  {% endfor %}
@@ -60,7 +46,7 @@ use Joseph\Portfolio\Models\Gallery;
 
 	  {{ form_close() }}
 
-    </div>
+ </div>
 
     <!-- gallery -->
 	
